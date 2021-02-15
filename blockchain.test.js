@@ -1,11 +1,16 @@
 const Blockchain = require('./blockchain');
+
 const Block = require('./block');
 
+
 describe('Blockchain', () => {
-    let blockchain;
+    let blockchain, newChain, originalChain;
 
     beforeEach(() => {
-       blockchain = new Blockchain();
+        blockchain = new Blockchain();
+        newChain = new Blockchain();
+
+        originalChain = blockchain.chain;
     });
 
 
@@ -24,7 +29,7 @@ describe('Blockchain', () => {
         expect(blockchain.chain[blockchain.chain.length - 1].data).toEqual(newData);
     });
 
-    describe('isValidChain', () => {
+    describe('isValidChain()', () => {
         describe('When the chain does not start with the genesis blockk', () => {
             it('should retrun false', () => {
                 blockchain.chain[0] = {data: 'fake-genesis'};
@@ -35,7 +40,7 @@ describe('Blockchain', () => {
 
         describe('When the chain starts with the genesis block and has multiple blocks', () => {
 
-            beforeEach( () => {
+            beforeEach(() => {
                 blockchain.addBlock({data: 'Thailand'});
                 blockchain.addBlock({data: 'Peru'});
                 blockchain.addBlock({data: 'Mexico'});
@@ -64,6 +69,44 @@ describe('Blockchain', () => {
 
                     expect(Blockchain.isValidChain(blockchain.chain)).toBe(true);
 
+                });
+            });
+        });
+    });
+
+    describe('replaceChain()', () => {
+        describe('When the new chain is not longer', () => {
+            it('should not replace the chain', () => {
+                newChain.chain[0] = {new: 'chain'};
+
+                blockchain.replaceChain(newChain.chain);
+
+                expect(blockchain.chain).toEqual(originalChain);
+            });
+        });
+
+        describe('When the new chain is longer', () => {
+            beforeEach( () => {
+                newChain.addBlock({data: 'Thailand'});
+                newChain.addBlock({data: 'Peru'});
+                newChain.addBlock({data: 'Mexico'});
+            })
+            describe('and the chain is invalid', () => {
+                it('should not replace the chain', () => {
+                    newChain.chain[2].hash = 'some-fake-hash';
+
+                    blockchain.replaceChain(newChain.chain);
+
+                    expect(blockchain.chain).toEqual(originalChain)
+                });
+            });
+
+
+            describe('When the new chain is valid', () => {
+                it('should replace the chain', () => {
+                    blockchain.replaceChain(newChain.chain);
+
+                    expect(blockchain.chain).toEqual(newChain.chain)
                 });
             });
         });

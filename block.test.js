@@ -1,6 +1,9 @@
 const Block = require("./block");
+
 const cryptoHash = require('./crypto-hash');
+
 const {GENESIS_DATA} = require("./config");
+
 
 // testing the block
 describe('Block', () => {
@@ -21,7 +24,7 @@ describe('Block', () => {
     describe('genesis', () => {
         const genesisBlock = Block.genesis();
 
-        it('should return a Block instance',  () => {
+        it('should return a Block instance', () => {
             expect(genesisBlock instanceof Block).toBe(true);
         });
 
@@ -35,7 +38,7 @@ describe('Block', () => {
         const data = 'mined data';
         const minedBlock = Block.mineBlock({lastBlock, data});
 
-        it('should return a Block instance',  () => {
+        it('should return a Block instance', () => {
             expect(minedBlock instanceof Block).toBe(true);
         });
 

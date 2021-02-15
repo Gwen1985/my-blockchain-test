@@ -1,4 +1,5 @@
 const {GENESIS_DATA} = require('./config');
+
 const cryptoHash = require('./crypto-hash');
 
 
@@ -15,7 +16,7 @@ class Block {
         return new this(GENESIS_DATA);
     }
 
-    static mineBlock ({lastBlock, data}) {
+    static mineBlock({lastBlock, data}) {
         const timestamp = Date.now();
         const lastHash = lastBlock.hash;
 
@@ -28,5 +29,6 @@ class Block {
     }
 
 }
+
 
 module.exports = Block;

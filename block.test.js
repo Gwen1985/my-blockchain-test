@@ -24,7 +24,6 @@ describe('Block', () => {
         expect(block.difficulty).toEqual(difficulty);
     });
 
-
     describe('genesis', () => {
         const genesisBlock = Block.genesis();
 
@@ -52,7 +51,7 @@ describe('Block', () => {
 
         it('sets the `data`', () => {
             expect(minedBlock.data).toEqual(data);
-        })
+        });
 
         it('sets the `timestamp`', () => {
             expect(minedBlock.timestamp).not.toEqual(undefined);

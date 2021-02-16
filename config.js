@@ -1,6 +1,6 @@
 // This file serves as a collection file for hardcoded and global values.
 const MINE_RATE = 1000;
-const INITIAL_DIFFICULTY = 3;
+const INITIAL_DIFFICULTY = 1;
 // scream case syntax = ALL_CAPITAL_LETTERS = hardcoded global value
 const GENESIS_DATA = {
 

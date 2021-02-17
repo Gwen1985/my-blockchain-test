@@ -40,11 +40,16 @@ Source: Udemy -> Build a Blockchain & Cryptocurrency | Full-Stack Edition
 - Prevented a potential difficulty jump attack by adding extra validation for the blockchain.
 
 
+#### Part 4: API and Network:
+
+- Set up an express API to allow for interaction to the backend through HTTP requests.
+
+
 ## **TODO:**
 
 #### Part 4: API and Network:
 
-- Set up an express API to allow for interaction to the backend through HTTP requests.
+~~- Set up an express API to allow for interaction to the backend through HTTP requests.~~
 - Create a GET request to read the blockchain.
 - Add a POST request to write new blocks to the blockchain.
 - Implement a real-time messaging network through Redis or PubNub.

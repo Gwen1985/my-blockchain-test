@@ -45,12 +45,12 @@ Source: Udemy -> Build a Blockchain & Cryptocurrency | Full-Stack Edition
 
 - Set up an express API to allow for interaction to the backend through HTTP requests.
 - Create a GET request to read the blockchain.
+- Add a POST request to write new blocks to the blockchain ( use postman ).
 
 ## **TODO:**
 
 #### Part 4: API and Network:
 
-- Add a POST request to write new blocks to the blockchain.
 - Implement a real-time messaging network through Redis or PubNub.
 - Add the ability to broadcast chains.
 - Start peers through alternate ports, and broadcast chains when blocks are mined through the api.

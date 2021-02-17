@@ -13,4 +13,4 @@ app.get('/api/blocks', (req, res) => {
 
 const PORT = 3000;
 
-app.listen(PORT, () => console.log(chalk.greenBright(`listening at localhost:${PORT}`)));
+app.listen(PORT, () => console.log(chalk.blueBright(`listening at localhost:${PORT}`)));

@@ -7,6 +7,7 @@ Source: Udemy -> Build a Blockchain & Cryptocurrency | Full-Stack Edition
 - running the tests: _npm run test_
 - run the average-work.js file: _node average-work.js_
 - run the server : _npm run start_ or _nodemon_ for continues watching
+- run development: _npm run dev_ (uses nodemon automaticly)
 
 ### What have i achieved?
 

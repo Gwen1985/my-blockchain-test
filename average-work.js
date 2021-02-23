@@ -24,5 +24,5 @@ for (let i = 0; i < 1000; i++) {
 
     average = times.reduce((total, num) => (total + num)) / times.length;
 
-    console.log(chalk.blue(` Time to mine block: `) + chalk.greenBright(` ${timeDiff}ms. `) + chalk.red(`  Difficulty: `) + chalk.redBright(` ${nextBlock.difficulty}. `) + chalk.cyan(`  Average time: `) + chalk.cyanBright(` ${average} `));
+    console.log(chalk.bgGray.green(` Time to mine block: `) + chalk.greenBright(` ${timeDiff}ms. `) + chalk.bgGray.red(`  Difficulty: `) + chalk.redBright(` ${nextBlock.difficulty}. `) + chalk.bgGray.cyan(`  Average time: `) + chalk.cyanBright(` ${average} `));
 }

@@ -52,7 +52,7 @@ Source: Udemy -> Build a Blockchain & Cryptocurrency | Full-Stack Edition
 
 #### Part 4: API and Network:
 
-- Implement a real-time messaging network through Redis or PubNub.
+- Implement a real-time messaging network through PubNub.
 - Add the ability to broadcast chains.
 - Start peers through alternate ports, and broadcast chains when blocks are mined through the api.
 - Synchronize chains when new peers connect to the network.
